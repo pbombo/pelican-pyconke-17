@@ -183,7 +183,7 @@ ul.dates .date {
   position: absolute;
   left: 0;
   top: 1.3em;
-  background-color: #d52349;
+  background-color: #f16a7a;
   height: 3.5em;
   text-align: center;
   color: #fff;
@@ -198,7 +198,7 @@ ul.dates .date:after {
   position: absolute;
   bottom: 0;
   right: -1.2em;
-  border-left: solid 1.25em #d52349;
+  border-left: solid 1.25em #f16a7a;
   border-top: solid 1.8em transparent;
   border-bottom: solid 1.8em transparent;
 }
