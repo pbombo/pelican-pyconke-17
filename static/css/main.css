@@ -550,16 +550,8 @@ li {
 /* Desktop */
 
 @media screen and (min-width: 737px) {
-  #copyright {
-    margin: 3em 0 2em 0;
-  }
-
   #copyright .links {
     padding: 0.85em 2.25em 0.85em 2.25em;
-  }
-
-  #footer-wrapper {
-    padding: 4em 0 4em 0;
   }
 
   #footer-wrapper header {
@@ -590,10 +582,6 @@ li {
     margin: 0 0 0.25em 0.75em;
   }
 
-  #footer-wrapper {
-    padding: 3em 0 3em 0;
-  }
-
   #footer-wrapper:before {
     height: 2.5em;
   }
@@ -610,7 +598,7 @@ li {
 /* Mobile */
 @media screen and (max-width: 736px) {
   #copyright {
-    margin: 3em 0 0 0;
+    margin: 0;
   }
 
   #copyright .links {
@@ -618,7 +606,6 @@ li {
   }
 
   #footer-wrapper {
-    padding: 2em 25px;
     overflow: hidden;
     -webkit-transform: translateZ(0);
   }
