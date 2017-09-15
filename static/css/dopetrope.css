@@ -1,8 +1,11 @@
 /* wrapper .contents */
 
 .wrapper .content {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 10px auto;
+  background: #fff;
+  border-bottom: solid 1px #ccc;
+  border-radius: 3px;
+  color: #5d5d5d;
 }
 
 .wrapper .content.\31 25\25 {
