@@ -465,6 +465,7 @@ li {
     padding: 3em 5vw 5em;
     width: 105vw; }
     .sponsors .section-title {
+      text-align: center;
       color: #2D2546; }
     .sponsors .sponsor-grid {
       text-align: center;
