@@ -1,126 +1,167 @@
 <!doctype html>
 <html class="no-js" lang="">
     <head>
+        {% block head %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/normalize.min.css">
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
 
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="{{ SITEURL }}/theme/js/vendor/modernizr-2.8.3.min.js"></script>
+
+        {% if FEED_ALL_ATOM %}
+        <link rel="alternate" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" title="{{ SITENAME }} Full Atom Feed"/>
+        {% endif %}
+        {% if FEED_ALL_RSS %}
+        <link rel="alternate" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" title="{{ SITENAME }} Full RSS Feed"/>
+        {% endif %}
+        {% if FEED_ATOM %}
+        <link rel="alternate" href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" title="{{ SITENAME }} Atom Feed"/>
+        {% endif %}
+        {% if FEED_RSS %}
+        <link rel="alternate" href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" title="{{ SITENAME }} RSS Feed"/>
+        {% endif %}
+        <title>{% block title %}{{ SITENAME }} // {{ TAGLINE }}{% endblock title %}</title>
+
+        {% if GOOGLE_ANALYTICS %}
+        <!-- Google Analytics -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          ga('create', '{{ GOOGLE_ANALYTICS }}', 'auto');
+          ga('send', 'pageview');
+        </script>
+        <!-- /Google Analytics -->
+        {% endif %}
+        {% endblock head %}
     </head>
     <body class="home">
 
         <!-- Header -->
         <header class="wrapper clearfix">
-            <a href="" class="logo"><img src="img/logo.svg"></a>
-            <nav>
-                <ul>
-                    <li><a href="#">Registration</a></li>
-                    <li><a href="#">Schedule</a></li>
-                    <li><a href="#" class="active">Call for proposals</a></li>
-                    <li><a href="#">Volunteering</a></li>
-                    <li><a href="#">COC</a></li>
-                    <li><a href="#">News</a></li>
-                </ul>
+            <a href="" class="logo"><img src="theme/img/logo.svg"></a>
+            <nav id="nav">
+              <ul>
+              {% for title, link in NAVITEMS %}
+                <li><a href="{{ link }}">{{ title }}</a></li>
+              {% endfor %}
+              {% if PAGES_ON_MENU %}
+              {% for p in PAGES %}
+                <li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+              {% endfor %}
+              {% endif %}
+              </ul>
             </nav>
         </header>
         <!-- /Header -->
 
         <!-- Main Container -->
         <main class="wrapper">
-            <img src="img/skyline.png" class="skyline">
+            <img src="theme/img/skyline.png" class="skyline">
             <section class="cta-wrapper">
                 <h2>28 &mdash; 29<br>Sept. 2017</h2>
                 <h3>@USIU-Africa</h3>
-                <a href="" class="button primary-cta square">Buy Ticket</a>                        
+                <a href="" class="button primary-cta square">Buy Ticket</a>
             </section>
             <section class="description-wrapper clearfix">
                 <div class="icons clearfix">
                     <ul class="icon-grid clearfix">
                         <li class="icon">
-                            <img src="img/ConnectIcon.svg">
+                            <img src="theme/img/ConnectIcon.svg">
                             <h4>Connect</h4>
                         </li>
                         <li class="icon">
-                            <img src="img/ShareIcon.svg">
+                            <img src="theme/img/ShareIcon.svg">
                             <h4>Share</h4>
                         </li>
                         <li class="icon">
-                            <img src="img/LearnIcon.svg">
+                            <img src="theme/img/LearnIcon.svg">
                             <h4>Learn</h4>
                         </li>
                         <li class="icon">
-                            <img src="img/InspireIcon.svg">
+                            <img src="theme/img/InspireIcon.svg">
                             <h4>Inspire</h4>
-                        </li>        
+                        </li>
                     </ul>
                 </div>
                 <div class="description">
-                    <p>The first convention in Kenya bringing together  techies, business people, startups, learning institutions, students and other organizations or individuals with an interest in the Python programming language and its ecosystem.</p>
+                    <p>
+                    PyConKe will be the first in a series of anual gatherings of software developers, techies, business people, startups, learning institutions, students and other organizations and individuals that use or otherwise have an interest/stake in the Python programming language and its ecosystem.
+                    </p>
                 </div>
             </section>
             <section class="topics">
                 <h2 class="section-title">Featured Topics</h2>
                 <article>
-                    <h3>DATA SCIENCE<br> &amp; AI</h3>                            
-                    <p>Data Science &amp; AI</p>
+                    <h3>DATA SCIENCE &amp; AI</h3>
                     <p>Stats crunching with Pandas &amp; co. and ML with with tools like Tensorflow. Come partake in some pythonic stats & AI (just don't let what you subsequently create become self aware).</p>
                 </article>
                 <article>
                     <h3>Internet of Things</h3>
                     <p>Python in my IoT? It's more likely than you think! Feauted at the conference will be talks and presentations on (micro) python on assorted hardware with example applications.</p>
-                </article>    
+                </article>
                 <article>
-                    <h3>Web, Music &amp;<br> Animation</h3>                            
+                    <h3>Web, Music &amp; Animation</h3>
                     <p>Pythonic web frameworks, scripting in animation with Blender and coding music in Py with sonicpi. Plenty of talks and tutorials on these to get you started.</p>
                 </article>
             </section>
             <section class="speakers">
-                <h2 class="section-title">Speakers</h2>   
+                <h2 class="section-title">Speakers</h2>
                 <ul class="speaker-grid clearfix">
                     <li>
-                        <img src="img/speaker.png">
-                        <h3>Speaker Name Here</h3>                            
+                        <img src="theme/img/speaker.png">
+                        <h3>Speaker Name Here</h3>
                         <p>CTO Guy</p>
                     </li>
                     <li>
-                        <img src="img/speaker.png">
-                        <h3>Speaker Name Here</h3>                            
+                        <img src="theme/img/speaker.png">
+                        <h3>Speaker Name Here</h3>
                         <p>CTO Guy</p>
                     </li>
                     <li>
-                        <img src="img/speaker.png">
-                        <h3>Speaker Name Here</h3>                            
+                        <img src="theme/img/speaker.png">
+                        <h3>Speaker Name Here</h3>
                         <p>CTO Guy</p>
                     </li>
                     <li>
-                        <img src="img/speaker.png">
-                        <h3>Speaker Name Here</h3>                            
+                        <img src="theme/img/speaker.png">
+                        <h3>Speaker Name Here</h3>
                         <p>CTO Guy</p>
-                    </li>            
+                    </li>
                 </ul>
             </section>
             <section class="sponsors">
                 <h2 class="section-title">Our Awesome (and Growing) Grid of Sponsors</h2>
                 <ul class="sponsor-grid">
                     <li>
-                        <img src="https://www.filepicker.io/api/file/8gDICu9OQPOBqssHwvg1/convert?" alt="Jumo Logo">
+                        <img src="https://www.filepicker.io/api/file/8gDICu9OQPOBqssHwvg1/convert?" alt="Jumo">
                     </li>
                     <li>
-                        <img src="http://www.usiu.ac.ke/templates/usiuhomepagetemplate/images/logo-new.png" alt="USIU Logo">
+                        <img src="http://www.usiu.ac.ke/templates/usiuhomepagetemplate/images/logo-new.png" alt="USIU">
                     </li>
+                    <li>
+                        <img src="http://www.usiu.ac.ke/templates/usiuhomepagetemplate/images/logo-new.png" alt="GroInteligence">
+                    </li>
+                </ul>
+                <ul class="sponsor-grid">
                     <li>
                         <img src="https://blog.ona.io/assets/images/ona-logo.png" alt="Ona Logo">
                     </li>
                     <li>
-                        <img src="http://logos-download.com/wp-content/uploads/2016/02/Intel_white_logo.png" alt="Intel Logo">
+                        <img src="http://logos-download.com/wp-content/uploads/2016/02/Intel_white_logo.png" alt="Intel">
+                    </li>
+                </ul>
+                <ul class="sponsor-grid">
+                    <li>
+                        <img src="https://cdn-images-1.medium.com/max/532/1*epZGySCPZEWLnJEnP5Dqfw@2x.png" alt="Africa's Talking">
                     </li>
                     <li>
-                        <img src="https://cdn-images-1.medium.com/max/532/1*epZGySCPZEWLnJEnP5Dqfw@2x.png" alt="Africa's Talking Logo">
+                        <img src="https://cdn-images-1.medium.com/max/532/1*epZGySCPZEWLnJEnP5Dqfw@2x.png" alt="Value 8">
                     </li>
                 </ul>
             </section>
@@ -130,6 +171,7 @@
         <!-- Footer -->
         <footer>
             <h3>footer</h3>
+
         </footer>
         <!-- /Footer -->
 
