@@ -437,6 +437,7 @@ li {
     padding-bottom: 3em;
     width: 105vw; }
     .speakers .section-title {
+      text-align: center;
       margin: 3rem 0 4rem 5vw; }
 
   .speaker-grid {
@@ -466,6 +467,7 @@ li {
     .sponsors .section-title {
       color: #2D2546; }
     .sponsors .sponsor-grid {
+      text-align: center;
       margin-top: 3em; }
       .sponsors .sponsor-grid li {
         display: inline-block;
@@ -520,6 +522,7 @@ li {
 
 #footer-wrapper a {
   color: #c5c4c4;
+  text-decoration: none;
 }
 
 #footer-wrapper h2, #footer-wrapper h3, #footer-wrapper h4, #footer-wrapper h5, #footer-wrapper h6, #footer-wrapper strong, #footer-wrapper b {
@@ -693,10 +696,6 @@ section.developments {
     padding: 0.85em 2.25em 0.85em 2.25em;
   }
 
-  #footer-wrapper header {
-    margin: 0 0 3em 0;
-  }
-
   #footer-wrapper header h2 {
     font-size: 1.75em;
   }
@@ -723,10 +722,6 @@ section.developments {
 
   #footer-wrapper:before {
     height: 2.5em;
-  }
-
-  #footer-wrapper header {
-    margin: 0 0 1.5em 0;
   }
 
   #footer-wrapper header h2 {
