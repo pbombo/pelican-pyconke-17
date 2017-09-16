@@ -331,6 +331,9 @@ li {
           color: #2D2546; }
 
   body.home {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     background: #2D2546;
     color: #FFF; }
 
@@ -477,6 +480,7 @@ li {
         height: 4em; }
 
   footer {
+    flex: 1;
     background: #2d2546;
     color: #FFF;
     padding: 3em 5vw; }
