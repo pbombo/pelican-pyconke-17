@@ -479,6 +479,10 @@ li {
   footer {
     background: #2d2546;
     color: #FFF;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     padding: 3em 5vw; }
     footer h3 {
       color: #FFF;
