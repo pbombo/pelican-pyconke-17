@@ -119,4 +119,15 @@ $pad: 1.25em;
     width: percentage($col / $sum);
   }
 }
+
+body.home {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main.wrapper {
+  flex: 1
+}
+
 //** End of Grid Styles **/

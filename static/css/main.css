@@ -331,6 +331,9 @@ li {
           color: #2D2546; }
 
   body.home {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     background: #2D2546;
     color: #FFF; }
 
@@ -437,6 +440,7 @@ li {
     padding-bottom: 3em;
     width: 105vw; }
     .speakers .section-title {
+      text-align: center;
       margin: 3rem 0 4rem 5vw; }
 
   .speaker-grid {
@@ -464,8 +468,10 @@ li {
     padding: 3em 5vw 5em;
     width: 105vw; }
     .sponsors .section-title {
+      text-align: center;
       color: #2D2546; }
     .sponsors .sponsor-grid {
+      text-align: center;
       margin-top: 3em; }
       .sponsors .sponsor-grid li {
         display: inline-block;
@@ -474,11 +480,13 @@ li {
         height: 4em; }
 
   footer {
-    background: #222;
+    flex: 1;
+    background: #2d2546;
     color: #FFF;
     padding: 3em 5vw; }
     footer h3 {
       color: #FFF;
       margin: 0; } }
+
 
 /*# sourceMappingURL=main.css.map */

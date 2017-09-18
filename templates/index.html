@@ -1,1 +1,137 @@
 {% extends "base.html" %}
+
+{% block main %}
+<!-- Main Container -->
+<main class="wrapper">
+    <img src="{{ SITE_URL }}/theme/img/skyline.png" class="skyline">
+    <section class="cta-wrapper">
+        <h2>28 &mdash; 29<br/>Sept. 2017</h2>
+        <h3>@USIU-Africa</h3>
+        <a href="https://mymookh.com/tickets/event/435" class="button primary-cta square">Buy
+            Ticket</a>
+    </section>
+    <section class="description-wrapper clearfix">
+        <div class="icons clearfix">
+            <ul class="icon-grid clearfix">
+                <li class="icon">
+                    <img src="{{ SITE_URL }}/theme/img/ConnectIcon.svg">
+                    <h4>Connect</h4>
+                </li>
+                <li class="icon">
+                    <img src="{{ SITE_URL }}/theme/img/ShareIcon.svg">
+                    <h4>Share</h4>
+                </li>
+                <li class="icon">
+                    <img src="{{ SITE_URL }}/theme/img/LearnIcon.svg">
+                    <h4>Learn</h4>
+                </li>
+                <li class="icon">
+                    <img src="{{ SITE_URL }}/theme/img/InspireIcon.svg">
+                    <h4>Inspire</h4>
+                </li>
+            </ul>
+        </div>
+        <div class="description">
+            <p>The first convention in Kenya bringing together techies, business people, startups,
+                learning institutions, students and other organizations or individuals with an
+                interest in the Python programming language and its ecosystem.</p>
+        </div>
+    </section>
+    <section class="topics">
+        <h2 class="section-title">Featured Topics</h2>
+        <article>
+            <h3>DATA SCIENCE<br/> &amp; AI</h3>
+            <p>Data Science &amp; AI</p>
+            <p>Stats crunching with Pandas &amp; co. and ML with with tools like Tensorflow. Come
+                partake in some pythonic stats & AI (just don't let what you subsequently create
+                become self aware).</p>
+        </article>
+        <article>
+            <h3>Internet of Things</h3>
+            <p>Python in my IoT? It's more likely than you think! Feauted at the conference will be
+                talks and presentations on (micro) python on assorted hardware with example
+                applications.</p>
+        </article>
+        <article>
+            <h3>Web, Music &amp;<br/> Animation</h3>
+            <p>Pythonic web frameworks, scripting in animation with Blender and coding music in Py
+                with sonicpi. Plenty of talks and tutorials on these to get you started.</p>
+        </article>
+    </section>
+    <section class="sponsors">
+        <h2 class="section-title">Our Awesome (and Growing) Grid of Sponsors</h2>
+        <ul class="sponsor-grid level-1">
+            <li>
+               <a href="https://www.jumo.world">
+                    <img src="https://www.filepicker.io/api/file/8gDICu9OQPOBqssHwvg1/convert?"
+                     alt="Jumo Logo" title="JUMO">
+               </a>
+            </li>
+            <li>
+                <a href="http://www.usiu.ac.ke">
+                    <img src="http://www.usiu.ac.ke/templates/usiuhomepagetemplate/images/logo-new.png"
+                         alt="USIU Logo" title="USIU">
+                </a>
+            </li>
+            <li>
+                <a href="https://gro-intelligence.com">
+                    <img src="https://gro-intelligence.com/images/logo.jpg"
+                         alt="Gro Intelligence Logo" title="Gro Intelligence">
+                </a>
+            </li>
+        </ul>
+        <ul class="sponsor-grid level-2">
+            <li>
+                <a href="https://www.ona.io">
+                    <img src="https://blog.ona.io/assets/images/ona-logo.png" alt="Ona Logo" title="Ona">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.intel.com">
+                    <img src="http://logos-download.com/wp-content/uploads/2016/02/Intel_white_logo.png"
+                         alt="Intel Logo" title="Intel">
+                </a>
+            </li>
+        </ul>
+        <ul class="sponsor-grid level-3">
+            <li>
+                <a href="http://www.value8.com">
+                    <img src="https://cdn-images-1.medium.com/max/532/1*epZGySCPZEWLnJEnP5Dqfw@2x.png"
+                         alt="Africa's Talking Logo" title="Africa's Talking">
+                </a>
+            </li>
+            <li>
+                <a href="http://www.value8.com">
+                    <img src="http://www.value8.com/wp-content/uploads/2014/10/images-stories-artikel-value8-small1.png"
+                         alt="Value8 Logo" title="Value8">
+                </a>
+            </li>
+        </ul>
+    </section>
+</main>
+<!-- /Main Container -->
+{% endblock main %}
+
+
+{% block footerleft %}
+    <!-- recent developments -->
+    <section class="developments">
+        <header>
+            <h2 id="developments" name="developments">Recent Developments</h2>
+        </header>
+        <ul class="dates">
+            {% for article in articles_page.object_list %}
+            <li>
+                <span class="date">
+                    {{ article.date|strftime('%d') }}
+                    <strong>{{ article.date|strftime('%b') }}</strong>
+                </span>
+                <h3>
+                    <a href="/{{ article.url }}" title="Permalink to {{ article.title|striptags }}" target="_blank">{{ article.title }}</a>
+                </h3>
+                <p>{{ article.summary }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock footerleft %}
