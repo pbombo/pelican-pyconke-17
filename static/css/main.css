@@ -193,6 +193,14 @@ li {
   margin: auto 5%;
   width: 90%; }
 
+body.home {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+main.wrapper {
+  flex: 1; }
+
 .button {
   -webkit-transition: background ease-in 0.15s;
   -moz-transition: background ease-in 0.15s;
@@ -245,6 +253,15 @@ li {
     text-transform: uppercase; }
     .button.square:hover {
       opacity: .85; }
+  .button.disabled::before {
+    content: ' ';
+    height: 3px;
+    width: 93%;
+    position: absolute;
+    background: #fff;
+    left: 0;
+    top: 1.1em;
+    margin-left: 3.5%; }
   .button.hollow {
     background: transparent;
     border-color: #ccc;
@@ -331,9 +348,6 @@ li {
           color: #2D2546; }
 
   body.home {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
     background: #2D2546;
     color: #FFF; }
 
@@ -440,7 +454,6 @@ li {
     padding-bottom: 3em;
     width: 105vw; }
     .speakers .section-title {
-      text-align: center;
       margin: 3rem 0 4rem 5vw; }
 
   .speaker-grid {
@@ -468,25 +481,27 @@ li {
     padding: 1em;
     width: 105vw; }
     .sponsors .section-title {
-      text-align: center;
-      color: #2D2546; }
+      color: #2D2546;
+      text-align: center; }
     .sponsors .sponsor-grid {
-      text-align: center;
-      margin-top: 3.5em; }
+      margin-top: 3em;
+      text-align: center; }
       .sponsors .sponsor-grid li {
         display: inline-block;
-        margin-right: 2.5em; }
-      .sponsors .sponsor-grid.level-1 img {height: 14em; margin:.5em 1.5em }
-      .sponsors .sponsor-grid.level-2 img {height: 8em; margin:.5em 0em }
+        margin-right: 3.5em; }
+      .sponsors .sponsor-grid.level-1 img {
+        height: 10em; }
+      .sponsors .sponsor-grid.level-2 img {
+        height: 8em; }
+      .sponsors .sponsor-grid.level-3 img {
+        height: 6em; }
 
   footer {
-    flex: 1;
-    background: #2d2546;
+    background: #2D2546;
     color: #FFF;
     padding: 3em 5vw; }
     footer h3 {
       color: #FFF;
       margin: 0; } }
-
 
 /*# sourceMappingURL=main.css.map */
